@@ -1,0 +1,18 @@
+.editor-panel {
+  left: 10vw;
+  width: 45vw;
+  position: fixed;
+  padding: 20px 40px;
+  margin-bottom: 200px;
+  min-height: calc(100vh - 200px);
+  background-color: light-dark(var(--light-bg), var(--dark-bg));
+}
+
+@media print {
+  .editor-panel {
+    margin-left: 0;
+    margin-bottom: 0;
+    padding: 0;
+    min-height: auto;
+  }
+}

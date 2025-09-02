@@ -1,0 +1,57 @@
+@font-face {
+  font-family: "PixelOperator";
+  src: url(/fonts/PixelOperator.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PixelOperator";
+  src: url(/fonts/PixelOperator-Bold.ttf) format("truetype");
+  font-weight: 400;
+  font-style: bold;
+}
+
+@font-face {
+  font-family: "PixelOperatorMono";
+  src: url(/fonts/PixelOperatorMono.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "PixelOperatorMono";
+  src: url(/fonts/PixelOperatorMono-Bold.ttf) format("truetype");
+  font-weight: 400;
+  font-style: bold;
+}
+
+:root {
+  font-family: "PixelOperator";
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  --light-bg: white;
+  --light-color: black;
+
+  --dark-bg: black;
+  --dark-color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: light-dark(var(--light-bg), var(--dark-bg));
+  color: light-dark(var(--light-color), var(--dark-color));
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
