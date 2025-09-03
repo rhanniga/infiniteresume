@@ -3,14 +3,12 @@
 }
 
 .editor h1 {
-  color: light-dark(var(--light-color), var(--dark-color));
   margin-bottom: 30px;
-  border-bottom: 2px solid light-dark(var(--light-color), var(--dark-color));
+  border-bottom: 2px solid var(--color-fg);
   padding-bottom: 10px;
 }
 
 .editor h2 {
-  color: light-dark(var(--light-color), var(--dark-color));
   margin: 30px 0 20px 0;
   font-size: 1.3rem;
 }
@@ -24,7 +22,6 @@
   margin-bottom: 5px;
   font-weight: 600;
   font-size: large;
-  color: light-dark(var(--light-color), var(--dark-color));
 }
 
 .form-group input,
@@ -32,10 +29,8 @@
 .form-group select {
   width: 100%;
   padding: 10px;
-  border: 1px dashed light-dark(var(--light-color), var(--dark-color));
-  background-color: light-dark(var(--light-bg), var(--dark-bg));
+  border: 1px dashed var(--color-fg);
   font-size: medium;
-  font-family: "PixelOperator";
   transition: border-color 0.2s ease;
 }
 
@@ -43,7 +38,7 @@
 .form-group textarea:focus,
 .form-group select:focus {
   outline: none;
-  border-color: light-dark(var(--light-color), var(--dark-color));
+  border-color: var(--color-fg);
   box-shadow: 0 0 0 2px rgba(0, 122, 204, 0.1);
 }
 
@@ -53,12 +48,10 @@
 }
 
 .item-list {
-  background: light-dark(var(--light-bg), var(--dark-bg));
   margin-bottom: 10px;
 }
 
 .item {
-  background: light-dark(var(--light-bg), var(--dark-bg));
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 20px;
@@ -312,8 +305,7 @@
 
 /* Summary Item Styles */
 .summary-item {
-  background: light-dark(var(--light-bg), var(--dark-bg));
-  border: 1px solid light-dark(var(--light-color), var(--dark-color));
+  border: 1px solid var(--color-fg);
   padding: 20px;
   position: relative;
 }

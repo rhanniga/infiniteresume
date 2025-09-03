@@ -5,7 +5,6 @@
   padding: 20px 40px;
   margin-bottom: 200px;
   min-height: calc(100vh - 200px);
-  background-color: light-dark(var(--light-bg), var(--dark-bg));
 }
 
 @media print {

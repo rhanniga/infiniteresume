@@ -3,8 +3,6 @@
   align-items: center;
   width: 10vw;
   height: 100vh;
-  color: light-dark(var(--light-color), var(--dark-color));
-  background-color: light-dark(var(--light-bg), var(--dark-bg));
   padding: 20px;
   position: fixed;
   left: 0vw;
@@ -32,12 +30,12 @@
 }
 
 .sidebar-button:hover {
-  background-color: light-dark(#f0f0f0, #1a1a1a);
+  background-color: gray;
 }
 
 .sidebar-button.active {
   /* underline the active section */
-  font-weight: bold;
+  font-style: bold;
   text-decoration: underline;
 }
 

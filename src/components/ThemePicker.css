@@ -1,0 +1,15 @@
+.theme-picker {
+  position: fixed;
+  top: 10px;
+  right: 50px;
+  font-size: large;
+  padding: 8px;
+  cursor: pointer;
+  z-index: 1000;
+  border: 1px solid var(--color-fg);
+  border-radius: 6px;
+}
+
+.theme-picker :hover {
+  background-color: gray;
+}

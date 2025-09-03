@@ -1,15 +1,18 @@
 import { useState } from "react";
 import "./App.css";
-import type { Resume, SidebarSection } from "./types";
+import type { Resume, SidebarSection } from "./types.ts";
 import resumeData from "./data/resumeData.json";
 
 import Sidebar from "./components/Sidebar.tsx";
 import EditorPanel from "./components/EditorPanel.tsx";
 import JobDescriptionPanel from "./components/JobDescriptionPanel.tsx";
 import PreviewPanel from "./components/PreviewPanel.tsx";
+import ThemePicker from "./components/ThemePicker.tsx";
 
 function App() {
-	const [theme, setTheme] = useState<"light" | "dark">("dark");
+
+	const [theme, setTheme] = useState<"light" | "dark" | "cat">("dark");
+
 	const [resume, setResume] = useState<Resume>(resumeData as Resume);
 	const [activeSection, setActiveSection] = useState<SidebarSection>(
 		"instructions",
@@ -21,29 +24,27 @@ function App() {
 	);
 
 	return (
-		<div className="app light">
-					<>
-						<div onClick={() => setTheme(theme === "light" ? "dark" : "light")} className="theme-toggle">
-							{theme === "light" ? "🌙" : "☀️"}
-						</div>
-						<Sidebar
-							activeSection={activeSection}
-							onSectionChange={setActiveSection}
-						/>
+		<div className="app" data-theme={theme}>
+				<ThemePicker theme={theme} setTheme={setTheme} />
 
-						<EditorPanel
-							resume={resume}
-							setResume={setResume}
-							activeSection={activeSection}
-						/>
-						{/* <JobDescriptionPanel
-							jobDescription={jobDescription}
-							setJobDescription={setJobDescription}
-							resume={resume}
-							onOptimize={setOptimizedResume}
-							onPreview={setIsPreviewMode}
-						/> */}
-					</>
+				<Sidebar
+					activeSection={activeSection}
+					onSectionChange={setActiveSection}
+				/>
+
+				<EditorPanel
+					resume={resume}
+					setResume={setResume}
+					activeSection={activeSection}
+				/>
+
+				{/* <JobDescriptionPanel
+					jobDescription={jobDescription}
+					setJobDescription={setJobDescription}
+					resume={resume}
+					onOptimize={setOptimizedResume}
+					onPreview={setIsPreviewMode}
+				/> */}
 		</div>
 	);
 }

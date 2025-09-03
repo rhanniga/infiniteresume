@@ -26,32 +26,32 @@
   font-style: bold;
 }
 
+
 :root {
+  --color-bg: black;
+  --color-fg: white;
+
   font-family: "PixelOperator";
-  line-height: 1.5;
-  font-weight: 400;
+  font-style: normal;
+}
 
-  color-scheme: light dark;
+[data-theme="dark"] {
+  --color-bg: black;
+  --color-fg: white;
+}
 
-  --light-bg: white;
-  --light-color: black;
+[data-theme="light"] {
+  --color-bg: white;
+  --color-fg: black;
+}
 
-  --dark-bg: black;
-  --dark-color: white;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+[data-theme="cat"] {
+  --color-bg: purple;
+  --color-fg: white;
 }
 
 body {
   margin: 0;
-  background-color: light-dark(var(--light-bg), var(--dark-bg));
-  color: light-dark(var(--light-color), var(--dark-color));
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
 }
