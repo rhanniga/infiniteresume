@@ -10,43 +10,48 @@ import PreviewPanel from "./components/PreviewPanel.tsx";
 import ThemePicker from "./components/ThemePicker.tsx";
 
 function App() {
+  const [theme, setTheme] = useState<"light" | "dark" | "cat">("dark");
 
-	const [theme, setTheme] = useState<"light" | "dark" | "cat">("dark");
+  const [resume, setResume] = useState<Resume>(resumeData as Resume);
+  const [activeSection, setActiveSection] = useState<SidebarSection>(
+    "instructions",
+  );
+  const [jobDescription, setJobDescription] = useState<string>("");
+  const [isPreviewMode, setIsPreviewMode] = useState<boolean>(false);
+  const [optimizedResume, setOptimizedResume] = useState<Resume | null>(
+    null,
+  );
 
-	const [resume, setResume] = useState<Resume>(resumeData as Resume);
-	const [activeSection, setActiveSection] = useState<SidebarSection>(
-		"instructions",
-	);
-	const [jobDescription, setJobDescription] = useState<string>("");
-	const [isPreviewMode, setIsPreviewMode] = useState<boolean>(false);
-	const [optimizedResume, setOptimizedResume] = useState<Resume | null>(
-		null,
-	);
+  return (
+    <div className="app" data-theme={theme}>
+      <ThemePicker theme={theme} setTheme={setTheme} />
 
-	return (
-		<div className="app" data-theme={theme}>
-				<ThemePicker theme={theme} setTheme={setTheme} />
-
-				<Sidebar
+      {
+        /* <Sidebar
 					activeSection={activeSection}
 					onSectionChange={setActiveSection}
-				/>
+				/> */
+      }
 
-				<EditorPanel
+      {
+        /* <EditorPanel
 					resume={resume}
 					setResume={setResume}
 					activeSection={activeSection}
-				/>
+				/> */
+      }
 
-				{/* <JobDescriptionPanel
+      {
+        /* <JobDescriptionPanel
 					jobDescription={jobDescription}
 					setJobDescription={setJobDescription}
 					resume={resume}
 					onOptimize={setOptimizedResume}
 					onPreview={setIsPreviewMode}
-				/> */}
-		</div>
-	);
+				/> */
+      }
+    </div>
+  );
 }
 
 export default App;
